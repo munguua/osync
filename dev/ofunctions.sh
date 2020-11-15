@@ -31,7 +31,7 @@
 #### OFUNCTIONS MINI SUBSET ####
 #### OFUNCTIONS MICRO SUBSET ####
 _OFUNCTIONS_VERSION=2.3.0-RC4
-_OFUNCTIONS_BUILD=2020062901
+_OFUNCTIONS_BUILD=2020111501
 #### _OFUNCTIONS_BOOTSTRAP SUBSET ####
 _OFUNCTIONS_BOOTSTRAP=true
 #### _OFUNCTIONS_BOOTSTRAP SUBSET END ####
@@ -439,7 +439,7 @@ function GenericTrapQuit {
 	exit $exitcode
 }
 
-#### TrapQuit SUBSET END ####
+#### GenericTrapQuit SUBSET END ####
 
 #### CleanUp SUBSET ####
 function CleanUp {
@@ -767,7 +767,7 @@ function _PerfProfiler {												#__WITH_PARANOIA_DEBUG
 	perfString=$(ps -p $$ -o args,pid,ppid,%cpu,%mem,time,etime,state,wchan)					#__WITH_PARANOIA_DEBUG
 															#__WITH_PARANOIA_DEBUG
 	for i in $(pgrep -P $$); do											#__WITH_PARANOIA_DEBUG
-		perfString="$perfString\n"$(ps -p $i -o args,pid,ppid,%cpu,%mem,time,etime,state,wchan | tail -1)	#__WITH_PARANOIA_DEBUG
+		perfString="$perfString\n"$(ps -p $i -o args,pid,ppid,%cpu,%mem,time,etime,state,wchan | :| tail -1)	#__WITH_PARANOIA_DEBUG
 	done														#__WITH_PARANOIA_DEBUG
 															#__WITH_PARANOIA_DEBUG
 	if type iostat > /dev/null 2>&1; then										#__WITH_PARANOIA_DEBUG
