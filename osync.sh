@@ -14,7 +14,7 @@ CONFIG_FILE_REVISION_REQUIRED=1.3.0
 
 
 _OFUNCTIONS_VERSION=2.3.0-RC4
-_OFUNCTIONS_BUILD=2020062901
+_OFUNCTIONS_BUILD=2020111501
 _OFUNCTIONS_BOOTSTRAP=true
 
 if ! type "$BASH" > /dev/null; then
@@ -391,7 +391,6 @@ function GenericTrapQuit {
 	exit $exitcode
 }
 
-#### TrapQuit SUBSET END ####
 
 function CleanUp {
 	# Exit controlmaster before it's socket gets deleted
